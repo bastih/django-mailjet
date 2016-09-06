@@ -129,16 +129,16 @@ class MailjetBackend(BaseEmailBackend):
 
     def _add_mailjet_options(self, message, msg_dict):
         mailjet_attrs = {
-            'template_id': 'MJ-TemplateID',
-            'template_language': 'MJ-TemplateLanguage',
+            'template_id': 'Mj-TemplateID',
+            'template_language': 'Mj-TemplateLanguage',
             'template_error_reporting': 'MJ-TemplateErrorReporting',
             'template_error_deliver': 'MJ-TemplateErrorDeliver',
-            'campaign': 'MJ-Campaign',
-            'deduplicate_campaign': 'MJ-deduplicatecampaign',
-            'track_open': 'MJ-trackopen',
-            'track_click': 'MJ-trackclick',
-            'custom_id': 'MJ-CustomID',
-            'event_payload': 'MJ-EventPayLoad',
+            'campaign': 'Mj-Campaign',
+            'deduplicate_campaign': 'Mj-deduplicatecampaign',
+            'track_open': 'Mj-trackopen',
+            'track_click': 'Mj-trackclick',
+            'custom_id': 'Mj-CustomID',
+            'event_payload': 'Mj-EventPayLoad',
         }
 
         for attr, mj_attr in mailjet_attrs.items():
