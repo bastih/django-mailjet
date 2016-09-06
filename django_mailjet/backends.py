@@ -41,7 +41,7 @@ class MailjetBackend(BaseEmailBackend):
         recipient_vars = getattr(message, 'recipient_vars', {})
 
         for addr in recipients:
-            to_email, to_name = parseaddr(sanitize_address(addr, message.encoding))
+            to_name, to_email = parseaddr(sanitize_address(addr, message.encoding))
             rcpt = {'Email': to_email, 'Name': to_name}
 
             if recipient_vars.get(addr):
@@ -115,7 +115,7 @@ class MailjetBackend(BaseEmailBackend):
             msg_dict['Cc'] = message.cc
 
         if hasattr(message, 'bcc'):
-            msg_dict['bcc'] = message.bcc
+            msg_dict['Bcc'] = message.bcc
 
         if hasattr(message, 'reply_to'):
             reply_to = [sanitize_address(addr, message.encoding) for addr in message.reply_to]
