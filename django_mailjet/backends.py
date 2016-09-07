@@ -72,7 +72,7 @@ class MailjetBackend(BaseEmailBackend):
             response = self.post_to_mailjet(payload, message)
             message.mailjet_response = self.parse_response(response, payload, message)
             if len(message.mailjet_response["Sent"]) != len(message.recipients()):
-                raise MailjetError(email_message=message, payload=payload, response=response)
+                raise MailjetError("Not all messages sent", email_message=message, payload=payload, response=response)
         except MailjetError:
             if not self.fail_silently:
                 raise
