@@ -67,13 +67,12 @@ class MailjetBackend(BaseEmailBackend):
         if not message.recipients():
             return False
 
-
         try:
             payload = self.build_send_payload(message)
             response = self.post_to_mailjet(payload, message)
-
             message.mailjet_response = self.parse_response(response, payload, message)
-
+            if len(message.mailjet_response["Sent"]) != len(message.recipients()):
+                raise MailjetError(email_message=message, payload=payload, response=response)
         except MailjetError:
             if not self.fail_silently:
                 raise
