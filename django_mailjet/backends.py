@@ -18,16 +18,16 @@ class MailjetBackend(BaseEmailBackend):
     Mailjet email backend for Django
     """
     mailjet_attrs = {
-            'template_id': 'Mj-TemplateID',
-            'template_language': 'Mj-TemplateLanguage',
-            'template_error_reporting': 'MJ-TemplateErrorReporting',
-            'template_error_deliver': 'MJ-TemplateErrorDeliver',
-            'campaign': 'Mj-Campaign',
-            'deduplicate_campaign': 'Mj-deduplicatecampaign',
-            'track_open': 'Mj-trackopen',
-            'track_click': 'Mj-trackclick',
-            'custom_id': 'Mj-CustomID',
-            'event_payload': 'Mj-EventPayLoad',
+        'template_id': 'Mj-TemplateID',
+        'template_language': 'Mj-TemplateLanguage',
+        'template_error_reporting': 'MJ-TemplateErrorReporting',
+        'template_error_deliver': 'MJ-TemplateErrorDeliver',
+        'campaign': 'Mj-Campaign',
+        'deduplicate_campaign': 'Mj-deduplicatecampaign',
+        'track_open': 'Mj-trackopen',
+        'track_click': 'Mj-trackclick',
+        'custom_id': 'Mj-CustomID',
+        'event_payload': 'Mj-EventPayLoad',
     }
 
     def __init__(self, fail_silently=False, *args, **kwargs):
